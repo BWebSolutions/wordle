@@ -28,14 +28,14 @@ function filter() {
 
         switch (block.style.backgroundColor) {
             case 'rgb(106, 170, 100)':
-                filterGreen(block.value, i);
+                filterGreen(block.value.toLowerCase(), i);
                 dictGreen[i] = block.value;
                 break;
             case 'rgb(211, 189, 91)':
-                filterYellow(block.value, i);
+                filterYellow(block.value.toLowerCase(), i);
                 break;
             case 'rgb(119, 119, 119)':
-                filterGray(block.value);
+                filterGray(block.value.toLowerCase());
                 break;
         }
     }
@@ -90,7 +90,7 @@ function loadSelect() {
     emptySelect(select);
 
     for (var i = 0; i < w.length; i++) {
-        var optn = w[i];
+        var optn = w[i].toUpperCase();
         var el = document.createElement("option");
         el.textContent = optn;
         el.value = optn;

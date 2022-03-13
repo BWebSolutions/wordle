@@ -1,6 +1,19 @@
-.guess{
-    visibility:visible;
+h1{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight:bold;
+    margin:0px;
 }
+
+input:disabled {
+    -webkit-text-fill-color: #fff;
+    -webkit-appearance: none;
+    opacity:1;
+ }
+
+ a {
+     color:#333;
+     text-decoration:none;
+ }
 
 .select-css{
     display: block;
@@ -46,25 +59,39 @@
 }
 
 .block {
-    border: 1px solid #999;
-    height: 28px;
-    width: 28px;
-    font-size: 28px;
+    border: 0;
+    border-radius:0;
+    height: 34px;
+    width: 30px;
+    font-size: 26px;
     font-weight: bold;
     text-align: center;
     margin: 2px;
     cursor: pointer;
     caret-color: transparent;
     color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 }
 
-.guess {
-    cursor:initial;
-    color:#fff;
+.border{
+    height: 32px;
+    width: 28px;
+    border:1px solid #ccc;
+}
+
+.border:focus {
+    outline: none;
 }
 
 .hidden-div {
     display:none;
+    margin:0px;
+    margin-bottom:4px;
 }
 
 .white {
@@ -96,7 +123,7 @@
     color: #FFFFFF;
     cursor: pointer;
     direction: ltr;
-    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 17px;
     font-weight: 400;
     letter-spacing: -.022em;
