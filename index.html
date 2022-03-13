@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wordle Helper</title>
+    <script src="js/words.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="js/style.css">
+</head>
+<body style="text-align:center;" onload="start()">
+
+    <h1>Wordle Helper</h1>
+
+    <div id="guess0" class="hidden-div">
+        <input class="guess block" id="block00" disabled />
+        <input class="guess block" id="block01" disabled />
+        <input class="guess block" id="block02" disabled />
+        <input class="guess block" id="block03" disabled />
+        <input class="guess block" id="block04" disabled />
+    </div>
+
+    <div id="guess1" class="hidden-div">
+        <input class="guess block" id="block10" disabled />
+        <input class="guess block" id="block11" disabled />
+        <input class="guess block" id="block12" disabled />
+        <input class="guess block" id="block13" disabled />
+        <input class="guess block" id="block14" disabled />
+    </div>
+
+    <div id="guess2" class="hidden-div">
+        <input class="guess block" id="block20" disabled />
+        <input class="guess block" id="block21" disabled />
+        <input class="guess block" id="block22" disabled />
+        <input class="guess block" id="block23" disabled />
+        <input class="guess block" id="block24" disabled />
+    </div>
+
+    <div id="guess3" class="hidden-div">
+        <input class="guess block" id="block30" disabled />
+        <input class="guess block" id="block31" disabled />
+        <input class="guess block" id="block32" disabled />
+        <input class="guess block" id="block33" disabled />
+        <input class="guess block" id="block34" disabled />
+    </div>
+
+    <div id="guess4" class="hidden-div">
+        <input class="guess block" id="block40" disabled />
+        <input class="guess block" id="block41" disabled />
+        <input class="guess block" id="block42" disabled />
+        <input class="guess block" id="block43" disabled />
+        <input class="guess block" id="block44" disabled />
+    </div>
+
+    <input class="block" id="block0" onclick="toggleBlock('block0');" maxlength="1" />
+    <input class="block" id="block1" onclick="toggleBlock('block1');" maxlength="1" />
+    <input class="block" id="block2" onclick="toggleBlock('block2');" maxlength="1" />
+    <input class="block" id="block3" onclick="toggleBlock('block3');" maxlength="1" />
+    <input class="block" id="block4" onclick="toggleBlock('block4');" maxlength="1" />
+
+    <br />
+
+    <div align="center" style="margin:10px;">
+        <button onclick="filter();" class="button-15">
+            Filter
+        </button>
+
+        <select id="arr" ondblclick="selectWord()" class="select-css" multiple size="10"></select>
+
+        <button onclick="location.reload();" class="button-15" style="font-size:.8em;">
+            New Game
+        </button>
+        <button onclick="location.href='help.html';" class="button-15" style="font-size:.8em;">
+            Help
+        </button>
+    </div>
+</body>
+</html>
