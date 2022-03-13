@@ -5,6 +5,7 @@
     <script src="js/words.js"></script>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="js/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body style="text-align:center;" onload="start()">
 
@@ -62,9 +63,11 @@
         <button onclick="filter();" class="button-15">
             Filter
         </button>
+        <br />
 
-        <select id="arr" ondblclick="selectWord()" class="select-css" multiple size="10"></select>
+        <select id="arr" ondblclick="selectWord()" multiple size="10"></select>
 
+        <br />
         <button onclick="location.reload();" class="button-15" style="font-size:.8em;">
             New Game
         </button>
