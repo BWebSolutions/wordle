@@ -47,12 +47,12 @@
 
 .block {
     border: 1px solid #999;
-    height: 25px;
-    width: 25px;
-    font-size: 25px;
+    height: 28px;
+    width: 28px;
+    font-size: 28px;
     font-weight: bold;
     text-align: center;
-    margin: 4px;
+    margin: 2px;
     cursor: pointer;
     caret-color: transparent;
     color: #fff;
