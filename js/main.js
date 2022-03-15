@@ -1,6 +1,6 @@
 function start() {
     for (var i = 0; i < 5; i++)
-        document.getElementById("block"+i).style.color = "#000";
+        document.getElementById("block"+i).style.color = "black";
     loadSelect();
 }
 
@@ -23,6 +23,21 @@ function toggleBlock(block) {
 }
 
 function filter() {
+    // make sure the guesses are filled in
+    for (var i = 0; i < 5; i++) {
+        var block = document.getElementById("block" + i);
+        if (block.value == '') {
+            alert('Select a word before filtering the list');
+            return false;
+        } else if (block.style.color == 'black') {
+            alert('Click block ' + parseInt(i+1) + ' to color it in before filtering the list');
+            return false;
+        }
+    }
+
+    // track the yellow blocks for non-isograms
+    arrYellow = [];
+
     for (var i = 0; i < 5; i++) {
         var block = document.getElementById("block" + i);
 
@@ -33,6 +48,7 @@ function filter() {
                 break;
             case 'rgb(211, 189, 91)':
                 filterYellow(block.value.toLowerCase(), i);
+                arrYellow[i] = block.value.toLowerCase();
                 break;
             case 'rgb(119, 119, 119)':
                 filterGray(block.value.toLowerCase());
@@ -75,12 +91,16 @@ function filterGray(c) {
     var j = 0;
 
     for (var i = 0; i < w.length; i++) {
-        if (w[i].indexOf(c) == -1) {
+        if (w[i].indexOf(c) == -1 || previousYellow(c)) {
             x[j] = w[i];
             j++;
         }
     }
     w = x;
+}
+
+function previousYellow(c) {
+    return (arrYellow.includes(c) ? true : false);
 }
 
 
