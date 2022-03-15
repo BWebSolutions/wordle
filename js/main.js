@@ -49,7 +49,7 @@ function filterGreen(c, place) {
     var j = 0;
 
     for (var i = 0; i < w.length; i++) {
-        if (w[i].indexOf(c) == place) {
+        if (w[i].substring(place, place+1) == c) {
             x[j] = w[i];
             j++;
         }
