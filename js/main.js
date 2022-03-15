@@ -38,17 +38,30 @@ function filter() {
     // track the yellow blocks for non-isograms
     arrYellow = [];
 
+    // loop through the current blocks to add to the green dictionary and yellow array
+    for (var i = 0; i < 5; i++) {
+        var block = document.getElementById("block" + i);
+
+        switch (block.style.backgroundColor) {
+            case 'rgb(106, 170, 100)':
+                dictGreen[i] = block.value;
+                break;
+            case 'rgb(211, 189, 91)':
+                arrYellow[i] = block.value.toLowerCase();
+                break;
+        }
+    }
+
+    // loop through the blocks to filter based on word list
     for (var i = 0; i < 5; i++) {
         var block = document.getElementById("block" + i);
 
         switch (block.style.backgroundColor) {
             case 'rgb(106, 170, 100)':
                 filterGreen(block.value.toLowerCase(), i);
-                dictGreen[i] = block.value;
                 break;
             case 'rgb(211, 189, 91)':
                 filterYellow(block.value.toLowerCase(), i);
-                arrYellow[i] = block.value.toLowerCase();
                 break;
             case 'rgb(119, 119, 119)':
                 filterGray(block.value.toLowerCase());
@@ -91,7 +104,7 @@ function filterGray(c) {
     var j = 0;
 
     for (var i = 0; i < w.length; i++) {
-        if (w[i].indexOf(c) == -1 || previousYellow(c)) {
+        if (w[i].indexOf(c) == -1 || previousYellow(c) || previousGreen(c)) {
             x[j] = w[i];
             j++;
         }
@@ -101,6 +114,14 @@ function filterGray(c) {
 
 function previousYellow(c) {
     return (arrYellow.includes(c) ? true : false);
+}
+
+function previousGreen(c) {
+    for (const value of Object.values(dictGreen)) {
+        if (value == c.toUpperCase()) return true;
+    }
+
+    return false;
 }
 
 
